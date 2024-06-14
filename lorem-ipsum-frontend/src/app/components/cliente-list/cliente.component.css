@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+.main-body {
+  padding: 20px 20px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.main-body .mat-form-field {
+  width: 100%;
+}
+
+.btn {
+  margin: 20px 0;
+}

@@ -1,0 +1,30 @@
+<div class="main-body">
+  <button class="btn" mat-flat-button [routerLink]="['/']">
+    Voltar
+  </button>
+  <div *ngIf="cliente">
+    <mat-card>
+      <mat-card-content>
+        <p>Cliente {{ cliente.id }}</p>
+        <p>Nome: {{ cliente.nome }}</p>
+        <p>Data de Nascimento: {{ cliente.dataNascimento | date:'dd/MM/yyyy' }}</p>
+        <p>Gênero: {{ cliente.genero | genero }}</p>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle *ngFor="let endereco of cliente.enderecos; index as i">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Endereço {{ i + 1}} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Tipo: {{ endereco.tipoEndereco | endereco }}</p>
+            <p>CEP: {{ endereco.cep }}</p>
+            <p>Logradouro: {{ endereco.logradouro }}</p>
+            <p>Cidade: {{ endereco.localidade }}</p>
+            <p>Número: {{ endereco.numero }}</p>
+            <p>UF: {{ endereco.uf }}</p>
+            <p>Complemento: {{ endereco.complemento }}</p>
+            <p>Bairro: {{ endereco.bairro }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
